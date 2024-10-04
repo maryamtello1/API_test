@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY});
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 const completion = await openai.chat.completions.create({
   model: "gpt-4o-mini",
@@ -9,9 +9,9 @@ const completion = await openai.chat.completions.create({
     { role: "system", content: "You are a helpful assistant." },
     {
       role: "user",
-      content: "Write a haiku about recursion in programming.",
+      content: "Write a haiku about how great this API workshop is.",
     },
   ],
 });
 
-console.log(completion.choices[0].message.content);
+console.log(completion.choices[0].message);
